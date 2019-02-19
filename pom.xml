@@ -27,18 +27,29 @@
              <muleVersion>${mule.version}</muleVersion>
          </configuration> -->
          <configuration>
-             <deploymentType>standalone</deploymentType>
-             <muleVersion>${mule.version}</muleVersion>
-			 <muleHome>C:\mule-standalone-3.9.0</muleHome>
-             <applicationName>maven-demo1</applicationName>
-			 <community>${mule.runtime.community}</community>
+             <deploymentType>cloudhub</deploymentType>
+             <muleVersion>3.9.1</muleVersion>
+             <username>khadarbashashaik1</username>
+             <password>Sameeha1234</password>
+              <applicationName>maven-demo-khadar</applicationName>
+              <!-- <businessGroup>engineering\devops</businessGroup> -->
+             <target>CloudHub</target>
+             <!-- One of: server, serverGroup, cluster
+             <domain>${cloudhub.domain}</domain>-->
+             <targetType>server</targetType>
+             <environment>Sandbox</environment>
+             <properties>
+                 <env>${env}</env>
+             </properties>
+             <workerType>Micro</workerType>
+             <workers>1</workers>
          </configuration>
          <executions>
              <execution>
-                 <id>undeploy</id>
-                 <phase>undeploy</phase>
+                 <id>deploy</id>
+                 <phase>deploy</phase>
                  <goals>
-                     <goal>undeploy</goal>
+                     <goal>deploy</goal>
                  </goals>
              </execution>             
          </executions>
